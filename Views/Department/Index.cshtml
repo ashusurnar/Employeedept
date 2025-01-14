@@ -1,0 +1,43 @@
+﻿
+@model IEnumerable<MarotiDemo.Models.Department>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-8 offset-2">
+                <h2 class="text-center text-primary">Department</h2>
+                <div class="mb-1">
+                    <a class="btn btn-outline-success" asp-action="Create" asp-controller="Department">Add-Dept</a>
+                </div>
+                <div>
+                    <table class="table table-bordered">
+                        <tr class="text-center">
+                        <th>DeptId</th>
+                        <th>DeptName</th>
+                        <th>DeptCode</th
+                         <th>Action</th>
+                         
+
+                        </tr>
+                        @foreach(var dept in Model)
+                    {
+                        <tr>
+                            <td>@dept.deptid</td>
+                            <td>@dept.deptname</td>
+                            <td>@dept.deptcode</td>
+                            <td>
+                                <a class="btn btn-outline-warning" asp-action="Edit" asp-controller="Department" asp-route-id="@dept.deptid">Edit</a>
+                                <a class="btn  btn-outline-danger" asp-action="Delete" asp-controller="Department" asp-route-id="@dept.deptid">Delete</a>
+                            </td>
+                        </tr>
+                    }
+
+                    </table>
+                    
+                     
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
